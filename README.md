@@ -85,12 +85,3 @@ Ce projet implémente un pipeline ETL pour le traitement des données de santé,
 - Monitorer les métriques de performance
 - Maintenir les bases de données
 
-## Sécurité
-
-- Accès sécurisé aux interfaces web
-- Chiffrement des données sensibles
-- Gestion des autorisations
-
-## Support
-
-Pour toute question ou problème, créer une issue dans le repository.
