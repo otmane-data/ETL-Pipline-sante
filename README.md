@@ -1,96 +1,138 @@
-# ETL Pipeline Santé
+🏥 ETL Pipeline Santé
+<p align="center"> <img src="assets/Animation.gif" alt="Pipeline ETL Animation"> </p>
+Ce projet implémente un pipeline ETL complet pour le traitement et l’analyse des données de santé. Il s’appuie sur des outils modernes tels qu’Airflow, Grafana, Prometheus, et Superset pour l’orchestration, la visualisation et le monitoring des données.
 
-<p align="center">
-  <img src="assets/Animation.gif" alt="Pipeline ETL Animation">
-</p>
+📌 Sommaire
+🧱 Architecture
 
-Ce projet implémente un pipeline ETL pour le traitement des données de santé, utilisant Airflow, Grafana, Prometheus et Superset.
+⚙️ Prérequis
 
-## Architecture
+🚀 Installation
 
-- **Airflow** : Orchestration des tâches ETL
-- **Grafana** : Visualisation des métriques de performance
-- **Prometheus** : Collecte et stockage des métriques
-- **Superset** : Analyse des données de santé
-- **StatsD** : Agrégation des métriques
+🛠️ Configuration
 
-## Prérequis
+📂 Base de données
 
-- Docker et Docker Compose
-- Python 3.8+
-- PostgreSQL
+🌬️ Airflow
 
-## Installation
+📊 Grafana
 
-1. Cloner le repository
-2. Installer les dépendances :
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Lancer les services :
-   ```bash
-   docker-compose up -d
-   ```
+📈 Superset
 
-## Configuration
+🔄 Pipeline de Données
 
-### Base de données
+📉 Métriques
 
-1. Initialiser la base de données de production :
-   ```bash
-   psql -f init-prod-sante.sql
-   ```
-2. Initialiser la base de données analytique :
-   ```bash
-   psql -f init-analytics-sante.sql
-   ```
+🧩 Monitoring
 
-### Airflow
+🧼 Maintenance
 
-- URL : http://localhost:8084
-- Les DAGs sont dans le dossier `Dags/`
-- Configuration dans `airflow.cfg`
+🔐 Sécurité
 
-### Grafana
+📬 Support
 
-- URL : http://localhost:3000
-- Dashboards préconfigurés dans `Grafana/provisioning/Dashboards/`
+🧱 Architecture
+Apache Airflow : Orchestration des tâches ETL.
 
-### Superset
+Grafana : Visualisation des métriques de performance.
 
-- URL : http://localhost:8088
-- Dashboards dans `superset/dashboards/`
+Prometheus : Collecte et stockage des métriques.
 
-## Pipeline de Données
+Superset : Analyse et exploration des données de santé.
 
-1. **Extraction** : Collecte des données depuis la base de production
-2. **Transformation** : Nettoyage et agrégation des données
-3. **Chargement** : Insertion dans la base analytique
+StatsD : Agrégation et export des métriques vers Prometheus.
 
-## Métriques
+⚙️ Prérequis
+Docker & Docker Compose
 
-- Taux d'occupation des établissements
-- Coût moyen des consultations
-- Performance du pipeline ETL
+Python ≥ 3.8
 
-## Monitoring
+PostgreSQL
 
-- Métriques de performance dans Grafana
-- Tableaux de bord d'analyse dans Superset
-- Logs dans Airflow
+🚀 Installation
+Cloner le repository :
 
-## Maintenance
+bash
+Copier
+Modifier
+git clone <url-du-repo>
+cd etl-pipeline-sante
+Installer les dépendances Python :
 
-- Vérifier les logs Airflow régulièrement
-- Monitorer les métriques de performance
-- Maintenir les bases de données
+bash
+Copier
+Modifier
+pip install -r requirements.txt
+Lancer les services avec Docker :
 
-## Sécurité
+bash
+Copier
+Modifier
+docker-compose up -d
+🛠️ Configuration
+📂 Base de données
+Initialiser la base de production :
 
-- Accès sécurisé aux interfaces web
-- Chiffrement des données sensibles
-- Gestion des autorisations
+bash
+Copier
+Modifier
+psql -f init-prod-sante.sql
+Initialiser la base analytique :
 
-## Support
+bash
+Copier
+Modifier
+psql -f init-analytics-sante.sql
+🌬️ Airflow
+Interface : http://localhost:8084
 
-Pour toute question ou problème, créer une issue dans le repository.
+DAGs disponibles dans le dossier Dags/
+
+Configuration personnalisable dans airflow.cfg
+
+📊 Grafana
+Interface : http://localhost:3000
+
+Dashboards configurés via Grafana/provisioning/Dashboards/
+
+📈 Superset
+Interface : http://localhost:8088
+
+Dashboards disponibles dans superset/dashboards/
+
+🔄 Pipeline de Données
+Extraction : Requête des données depuis la base de production.
+
+Transformation : Nettoyage, agrégation et enrichissement des données.
+
+Chargement : Insertion des données transformées dans la base analytique.
+
+📉 Métriques
+Quelques exemples de métriques surveillées :
+
+🔹 Taux d'occupation des établissements
+
+🔹 Coût moyen des consultations
+
+🔹 Performance globale du pipeline ETL
+
+🧩 Monitoring
+🔎 Dashboards de performance via Grafana
+
+📊 Analyse des données via Superset
+
+📋 Logs d’exécution dans Airflow
+
+🧼 Maintenance
+Vérification régulière des logs Airflow
+
+Suivi de la santé du pipeline via les métriques Grafana
+
+Maintenance et sauvegarde des bases de données
+
+🔐 Sécurité
+Accès sécurisé aux interfaces web
+
+Chiffrement des données sensibles
+
+Gestion des rôles et des permissions
