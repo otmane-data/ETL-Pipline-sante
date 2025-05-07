@@ -1,0 +1,32 @@
+apiVersion: 1
+
+datasources:
+  - name: PostgreSQL-Prod
+    type: postgres
+    url: postgres-prod:5432
+    user: postgres
+    secureJsonData:
+      password: postgres
+    jsonData:
+      database: sante_database
+      sslmode: disable
+      maxOpenConns: 100
+      maxIdleConns: 100
+      connMaxLifetime: 14400
+      postgresVersion: 1600
+      timescaledb: false
+
+  - name: PostgreSQL-ETL
+    type: postgres
+    url: postgres-etl:5432
+    user: postgres
+    secureJsonData:
+      password: postgres
+    jsonData:
+      database: ecommerce_metrics
+      sslmode: disable
+      maxOpenConns: 100
+      maxIdleConns: 100
+      connMaxLifetime: 14400
+      postgresVersion: 1600
+      timescaledb: false
